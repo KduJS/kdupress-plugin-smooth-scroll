@@ -1,0 +1,52 @@
+{
+  "name": "kdupress-plugin-smooth-scroll",
+  "version": "0.0.3",
+  "description": "Kdupress plugin for smooth scrolling",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdujs/kdupress-plugin-smooth-scroll.git"
+  },
+  "keywords": [
+    "kdupress",
+    "plugin",
+    "smooth",
+    "scroll"
+  ],
+  "author": "NKDuy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kdujs/kdupress-plugin-smooth-scroll/issues"
+  },
+  "homepage": "https://github.com/kdujs/kdupress-plugin-smooth-scroll#readme",
+  "scripts": {
+    "build": "rimraf lib types && tsc -p tsconfig.json",
+    "lint": "eslint --ext .ts src/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^11.9.5",
+    "@kdujs/eslint-config-standard": "^6.1.1",
+    "@kdujs/eslint-config-typescript": "^5.0.0",
+    "eslint": "^5.14.1",
+    "husky": "^1.3.1",
+    "kdu": "^2.5.24",
+    "kdu-router": "^3.0.7",
+    "lint-staged": "^8.1.4",
+    "rimraf": "^2.6.3",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "smoothscroll-polyfill": "^0.4.3"
+  }
+}
